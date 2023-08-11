@@ -5,11 +5,8 @@ import nltk
 
 
 
-def get_comments():
+def get_comments(owner, repo):
   token = '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'
-
-  owner = 'liferay'
-  repo = 'liferay-portal'
 
   url_to_get_prs_number = f'https://api.github.com/repos/{owner}/{repo}/pulls?q=mergeable:conflicting'
 
@@ -24,7 +21,7 @@ def get_comments():
       pr_numbers = [pr_number['number'] for pr_number in prs]
 
       all_comments = []
-      nltk.download('punkt')  # Certifique-se de ter o 'punkt' instalado
+      nltk.download('punkt') 
       nltk.download('stopwords')
       stop_words = set(stopwords.words('english'))
 
@@ -47,3 +44,8 @@ def get_comments():
   else:
       print(f'Falha na solicitação: {response.status_code} - {response.text}')
       return None
+  
+owner = 'torvalds'
+repo = 'linux'
+
+print(get_comments(owner, repo))
