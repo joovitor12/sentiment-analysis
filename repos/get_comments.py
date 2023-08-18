@@ -6,7 +6,7 @@ import nltk
 
 
 def get_comments(owner, repo):
-  token = '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'
+  token = 'your_token_here'
 
   url_to_get_prs_number = f'https://api.github.com/repos/{owner}/{repo}/pulls?q=mergeable:conflicting'
 
@@ -45,7 +45,3 @@ def get_comments(owner, repo):
       print(f'Falha na solicitação: {response.status_code} - {response.text}')
       return None
   
-owner = 'torvalds'
-repo = 'linux'
-
-print(get_comments(owner, repo))
