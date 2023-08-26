@@ -3,6 +3,8 @@ from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 import matplotlib.pyplot as plt
 from pattern.en import sentiment
+from flair.models import TextClassifier
+from flair.data import Sentence
 import nltk
 import os
 from textblob import TextBlob
