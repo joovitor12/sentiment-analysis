@@ -1,8 +1,11 @@
 import requests
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
+import matplotlib.pyplot as plt
+from pattern.en import sentiment
 import nltk
 import os
+from textblob import TextBlob
 from dotenv import load_dotenv
 
 load_dotenv()
